@@ -1,0 +1,13 @@
+pull:
+    - src: src1
+      regex: ^(?P<name>.*)$
+      ack: false
+      dst: src2
+    - src: src2
+      regex: ^(?P<doop>.*)$
+      ack: true
+      dst: src3
+    - src: src3
+      regex: ^(?P<poop>.*)$
+      ack: true
+      dst: src4
