@@ -1,13 +1,6 @@
-pull:
+pull_rules:
     - src: src1
-      regex: ^(?P<name>.*)$
-      ack: false
+      regex: ^(?P<date>.*?\d{2}:\d{2}:\d{2})\s+(?P<host>.*?)\s+(?P<msg>.*?)-0$
       dst: src2
     - src: src2
-      regex: ^(?P<doop>.*)$
-      ack: true
-      dst: src3
-    - src: src3
-      regex: ^(?P<poop>.*)$
-      ack: true
-      dst: src4
+      dst: change.ack
